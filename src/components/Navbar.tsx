@@ -5,7 +5,7 @@ function Navbar() {
 
     const baseStyles = "relative pl-3 before:left-0 before:content-[''] before:absolute  before:rounded-full before:top-1/3 after:transition-all";
 
-    const activeClass = ({ isActive }) => `${baseStyles} after:content-[''] after:absolute
+    const activeClass = ({ isActive }: { isActive: boolean }) => `${baseStyles} after:content-[''] after:absolute
         ${isActive ?
             "before:bg-amber-500 text-amber-500 before:w-1 before:h-1 after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-amber-500" :
             "hover:text-white before:bg-transparent text-gray-400 before:w-0 before:h-0 hover:text-gray-200 after:w-0"}

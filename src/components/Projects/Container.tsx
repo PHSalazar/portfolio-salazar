@@ -51,7 +51,7 @@ function Container() {
         }
     ];
 
-    const tagProject = (title) => <span className="text-xs bg-amber-500 text-white p-0.5 px-2 rounded-full whitespace-nowrap">{title}</span>
+    const tagProject = (title: string) => <span className="text-xs bg-amber-500 text-white p-0.5 px-2 rounded-full whitespace-nowrap">{title}</span>
 
     return (
         <>
