@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# 🚀 Portfolio 2026 - Salazar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de portfólio pessoal focado em exibir minhas competências em automação, desenvolvimento de chatbots e engenharia de software.
 
-Currently, two official plugins are available:
+## 📁 Estrutura de Arquivos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Abaixo, uma breve explicação da organização deste projeto:
 
-## React Compiler
+### 📂 `.github/workflows`
+* **`deploy.yml`**: O "motor" da automação. Este arquivo configura o **GitHub Actions** para realizar o build do projeto (Node 24) e o deploy automático para o GitHub Pages a cada push na branch `main`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📂 `public`
+* **`404.html`**: Arquivo essencial para o funcionamento do `BrowserRouter` no GitHub Pages. Ele captura rotas inexistentes no servidor e as redireciona de volta para o sistema de rotas do React.
+* **`favicon.svg`**: Ícone da página, estilizado com a cor de destaque do projeto (`amber-500`).
 
-## Expanding the ESLint configuration
+### 📂 `src`
+* **`components/`**: Contém os blocos de construção da interface.
+    * `Blog/` e `Projects/`: Componentes específicos para listagem e containers dessas seções.
+    * `Button.tsx` e `Navbar.tsx`: Componentes globais tipados com TypeScript.
+* **`layout/`**:
+    * **`Rootlayout.tsx`**: Define a estrutura mestre da aplicação, garantindo que a `Navbar` seja persistente em todas as páginas, inclusive na de erro.
+* **`pages/`**: Cada arquivo representa uma rota da aplicação (`Home`, `About`, `Projects`, `Blog`).
+    * **`ErrorPage.tsx`**: Página personalizada exibida quando o usuário acessa uma rota inválida.
+* **`App.tsx`**: Configuração central do `createBrowserRouter` e definição da hierarquia de rotas.
+* **`main.tsx`**: Ponto de entrada do React que renderiza o `App` no DOM.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ⚙️ Arquivos de Configuração
+* **`vite.config.ts`**: Configura o `base` path como `/portfolio-salazar/` para que os assets sejam carregados corretamente no subdiretório do GitHub.
+* **`tsconfig.json`**: Define as regras de tipagem estrita do TypeScript que garantem a segurança do código durante o build.
+* **`package.json`**: Gerencia as dependências e scripts do projeto (dev, build, lint).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologias
+* **React + Vite**
+* **TypeScript** (Tipagem Estrita)
+* **Tailwind CSS**
+* **React Router Dom** (BrowserRouter)
+* **GitHub Actions** (CI/CD)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Como Executar
+1. Clone o repositório.
+2. Rode `npm install`.
+3. Rode `npm run dev` para desenvolvimento ou `npm run build` para gerar a versão de produção.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+Desenvolvido com foco em automação e performance por **Pedro Henrique Salazar**.
