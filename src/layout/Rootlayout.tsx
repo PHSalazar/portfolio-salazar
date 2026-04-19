@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 
 function Rootlayout() {
     return (
-        <div className='flex app-container bg-gray-200 min-h-screen p-2 dark:bg-gray-700 dark:text-gray-200'>
+        <div className='flex app-container min-h-screen p-2 bg-gray-700 dark:text-gray-200'>
 
             <Navbar />
 
